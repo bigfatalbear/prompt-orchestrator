@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Prompt Orchestrator",
+  "version": "1.0.0",
+  "identifier": "com.promptorchestrator.app",
+  "build": {
+    "beforeDevCommand": "npm run dev -w @po/web",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build -w @po/web",
+    "frontendDist": "../../web/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Prompt Orchestrator",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 320,
+        "minHeight": 480,
+        "resizable": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: http://ipc.localhost; img-src 'self' asset: http://asset.localhost data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Productivity",
+    "shortDescription": "Transforme ideias em especificações para agentes de IA",
+    "longDescription": "Aplicativo local-first que conduz uma ideia informal até uma especificação técnica completa e um prompt pronto para agentes de desenvolvimento de IA.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ]
+  }
+}
