@@ -16,6 +16,7 @@ const alias = {
 };
 
 export default defineConfig({
+  base: '/prompt-orchestrator/',
   resolve: { alias },
   plugins: [
     react(),
@@ -29,20 +30,20 @@ export default defineConfig({
         theme_color: '#4f46e5',
         background_color: '#f8fafc',
         display: 'standalone',
-        start_url: '/',
-        scope: '/',
+        start_url: '/prompt-orchestrator/',
+        scope: '/prompt-orchestrator/',
         lang: 'pt-BR',
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
         ],
         shortcuts: [
-          { name: 'Novo projeto', url: '/?new=1', description: 'Criar um novo projeto' },
+          { name: 'Novo projeto', url: '/prompt-orchestrator/?new=1', description: 'Criar um novo projeto' },
         ],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}'],
-        navigateFallback: '/index.html',
+        navigateFallback: '/prompt-orchestrator/index.html',
       },
     }),
   ],

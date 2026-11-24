@@ -7,14 +7,14 @@ export default defineConfig({
   fullyParallel: false,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://localhost:4173',
+    baseURL: 'http://localhost:4173/prompt-orchestrator/',
     permissions: ['clipboard-read', 'clipboard-write'],
     trace: 'on-first-retry',
     ...devices['Desktop Chrome'],
   },
   webServer: {
     command: 'npm run preview',
-    url: 'http://localhost:4173',
+    url: 'http://localhost:4173/prompt-orchestrator/',
     reuseExistingServer: true,
     timeout: 60_000,
   },
